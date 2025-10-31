@@ -43,7 +43,7 @@ def twosum(arr, target):
         if compl in seen:
             return (i, seen[compl])
         else:
-            h[num] = i
+            seen[num] = i
     return None
 
 
