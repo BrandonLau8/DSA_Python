@@ -51,7 +51,7 @@ class Graph:
             
     def remove_node(self, node):
         if node in self.adj_list:
-		        # Remove node in all neighbors
+                # Remove node in all neighbors
             for neighbor in self.adj_list[node]:
                 self.adj_list[neighbor].remove(node)
             # Delete node
@@ -75,3 +75,23 @@ g.add_node('E')
 
 # g.remove_node('B')
 # print('After removing node B:', g.adj_list)
+
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+        
+    def create_node(self, node):
+        if node not in self.adj_list:
+           self.adj_list[node] = [] 
+           
+    def create_edge(self, node1, node2):
+        self.create_node(node1)
+        self.create_node(node2)
+        self.adj_list[node1].append(node2)
+        self.adj_list[node2].append(node1)
+        
+    def read_nodes(self):
+        return self.adj_list.keys()
+    
+    def read_edges(self, node):
+        return self.adj_list.get(node, [])

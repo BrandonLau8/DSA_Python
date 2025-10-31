@@ -1,30 +1,47 @@
-s = {1,2,3}
+# Using curly braces
+my_set = {1, 2, 3}
 
-print(2 in s)
-for item in s:
+# Using set() constructor
+my_set = set([1, 2, 3])
+
+# Check if an element exists
+print(2 in my_set)  # True
+
+# Loop through set
+for item in my_set:
     print(item)
     
+# Add an element
+my_set.add(4)
 
-s.add(4)
-s.update([5,6])
+# Add multiple elements
+my_set.update([5, 6])
 
-s.remove(2)
-s.discard(10)
+# Remove an element (raises error if not found)
+my_set.remove(2)
 
-element = s.pop()
-print(element)
+# Remove an element (no error if not found)
+my_set.discard(10)
 
-# s.clear()
+# Remove and return an arbitrary element could be any number
+element = my_set.pop()
 
-# del s
+# Clear the set
+my_set.clear()
 
-# a = {1, 2, 3}
-# b = {3, 4 ,5}
+del my_set  # Deletes the set object entirely
 
-# print(a | b)
+a = {1, 2, 3}
+b = {3, 4, 5}
 
-# print(a & b)
+# Union
+print(a | b)  # {1, 2, 3, 4, 5}
 
-# print(a - b)
+# Intersection
+print(a & b)  # {3}
 
-# print(a ^ b)
+# Difference
+print(a - b)  # {1, 2}
+
+# Symmetric Difference
+print(a ^ b)  # {1, 2, 4, 5}
